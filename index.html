@@ -3,19 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>STAR DEFENDER v1.4 — LAST SIGNAL</title>
+<title>STAR DEFENDER v1.5 — OPERATION LAST SIGNAL</title>
 <style>
 :root{color-scheme:dark;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#080d1c;color:#e8efff}body{display:flex;justify-content:center;align-items:center;padding:14px;overscroll-behavior:none}.wrap{width:min(100%,640px);display:grid;gap:10px;justify-items:center}.head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px}.head h1{font-size:1rem;letter-spacing:.18em;margin:0}.head small{font-size:.75rem;color:#a9b7d2}.shell{width:min(100%,480px);position:relative;border:1px solid #314463;border-radius:14px;overflow:hidden;box-shadow:0 18px 70px #0008;background:#060c1a;touch-action:none}canvas{width:100%;height:auto;aspect-ratio:3 / 4;display:block;touch-action:none}.hud{position:absolute;top:12px;left:14px;right:14px;display:flex;justify-content:space-between;gap:5px;pointer-events:none;font-size:14px;font-weight:750;text-shadow:0 2px 8px #000}.hud span{color:#6ff7e4}.hud .special-count{color:#ffd57b}.boss-note{position:absolute;top:47px;left:10%;width:80%;pointer-events:none;display:none;text-align:center;font-size:12px;font-weight:800;color:#ffbdca;text-shadow:0 2px 6px #000}.boss-note.visible{display:block}.boss-bar{margin-top:5px;height:9px;border:1px solid #ffb2bb;border-radius:8px;background:#3f1829;overflow:hidden}.boss-fill{height:100%;width:100%;background:linear-gradient(90deg,#ff6486,#ffc16b)}.overlay{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;background:#060e20ed;backdrop-filter:blur(4px);padding:12px;text-align:center;overflow-y:auto}.overlay.hidden{display:none}.panel{max-width:390px;width:100%;max-height:100%;overflow-y:auto;padding:5px 2px}.leaderboard{margin:7px auto 7px;text-align:left;max-width:300px;background:#111d35;border:1px solid #365071;border-radius:12px;padding:10px 14px}.leaderboard h3{font-size:.9rem;color:#9fe9e5;margin:0 0 7px;letter-spacing:.08em}.leaderboard ol{margin:0;padding-left:28px;font-variant-numeric:tabular-nums}.leaderboard li{padding:1px 0;color:#cfddf4;font-size:.86rem}.leaderboard li:first-child{color:#ffe09e}.leaderboard li span{float:right;margin-left:14px;color:#7cf5e8}.leaderboard .empty{font-size:.8rem;color:#a9b7d2}.rank-entry{margin:12px auto;display:flex;gap:7px;max-width:300px;align-items:center;flex-wrap:wrap;justify-content:center}.rank-entry[hidden]{display:none}.rank-entry label{font-size:.8rem;color:#d2e3fa}.rank-entry input{min-width:0;width:125px;border-radius:8px;background:#071325;border:1px solid #7193ad;color:white;padding:10px;font-size:16px}.rank-entry button{border:0;border-radius:8px;background:#f7d48d;color:#152033;padding:10px;font-weight:800;cursor:pointer}.rank-note{font-size:.72rem;color:#a8bbd6;margin:6px 0 10px}.panel h2{font-size:clamp(1.5rem,5vw,2.25rem);margin:0 0 12px;letter-spacing:.12em}.panel p{line-height:1.45;color:#b8c8e4;font-size:clamp(11px,2.5vw,14px);margin:8px 0}.panel strong{color:#65f9eb}.btn{background:#56e2d2;border:0;border-radius:11px;color:#001d2a;padding:12px 24px;font:700 16px inherit;cursor:pointer;font-weight:800;min-height:44px}.btn:hover{background:#9dfff1}.footer{font-size:.82rem;line-height:1.6;color:#aebbd5;text-align:center}.footer kbd{border:1px solid #56617f;border-radius:4px;padding:2px 5px;color:#ecf2ff}.mobile-controls{display:none;width:min(100%,480px);justify-content:space-between;gap:12px;align-items:center}.control{background:#233555;border:1px solid #4a658b;border-radius:14px;color:white;padding:12px 14px;min-height:52px;font-weight:700}.control:active{background:#3a5a7c}.hint{max-width:480px;width:100%;text-align:center;color:#90a3c3;font-size:12px}@media (pointer:coarse){.mobile-controls{display:flex}.footer{font-size:.75rem}}
 .overlay.cinematic{background:linear-gradient(180deg,#040a18aa 0%,#050a18aa 33%,#050a18ed 100%);align-items:flex-end;backdrop-filter:none;animation:fadeIn .35s ease-out}.overlay.cinematic .panel{max-width:100%;background:#09182bed;border:1px solid #55e9d1aa;border-left:4px solid #68fbe7;border-radius:12px;padding:15px 16px;box-shadow:0 -10px 30px #0008;text-align:left;max-height:88%}.overlay.cinematic .panel h2{font-size:1.12rem;color:#88fff0;letter-spacing:.11em;margin-bottom:10px}.overlay.cinematic .panel p{font-size:clamp(12px,3vw,15px);line-height:1.7;color:#e4f3ff}.overlay.cinematic .btn{width:100%;margin-top:8px}.overlay.cinematic .leaderboard{max-width:none;max-height:145px;overflow:auto}.overlay.cinematic .rank-entry{max-width:none}.overlay.cinematic .rank-note{text-align:center}.dialogue-tag{display:inline-block;border:1px solid #67efde;border-radius:5px;padding:2px 7px;margin-bottom:7px;color:#7cfbe6;font-weight:bold;font-size:.73rem;letter-spacing:.1em}.overlay.cinematic .panel p strong{color:#ffe18f}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.pickup-note{position:absolute;right:12px;top:75px;color:#ffdf86;font-weight:900;font-size:13px;text-shadow:0 1px 6px #000;pointer-events:none}
+
+/* v1.5: タイトル／ドラマ／結果を状態別に完全分離 */
+.overlay.title-screen{background:#060e20f2;align-items:center;backdrop-filter:blur(3px)}
+.overlay.title-screen .panel{text-align:center;max-width:390px}
+.overlay.drama-screen{background:radial-gradient(ellipse at 72% 24%,#38638588 0%,transparent 45%),linear-gradient(175deg,#060d20 0%,#132c4d 53%,#080e1c 100%);align-items:flex-end;backdrop-filter:none;overflow:hidden;padding:12px}
+.overlay.drama-screen::before{content:'✦   ·     ✧     ·        ✦        ·       ✧';position:absolute;top:12%;left:0;right:0;letter-spacing:18px;color:#91d9ffb0;font-size:20px;white-space:nowrap;overflow:hidden;pointer-events:none}
+.overlay.drama-screen::after{content:'▲';position:absolute;top:26%;left:50%;transform:translateX(-50%) rotate(180deg);font-size:85px;color:#57cde1aa;text-shadow:0 0 45px #43bfd9;pointer-events:none}
+.overlay.drama-screen .panel{z-index:1;max-width:none;width:100%;padding:16px;background:#071b32f5;border:1px solid #63dce6;border-radius:12px;text-align:left;box-shadow:0 0 24px #071322}
+.overlay.drama-screen .panel h2{font-size:1.05rem;color:#a4f5ff;margin-bottom:10px}
+.overlay.drama-screen .panel p{font-size:clamp(13px,3.5vw,15px);line-height:1.75;color:#e2f3ff}
+.overlay.drama-screen .leaderboard,.overlay.drama-screen .rank-entry,.overlay.drama-screen .rank-note{display:none!important}
+.overlay.drama-screen .btn{display:block;width:100%;margin-top:15px}
+.overlay.result-screen{background:linear-gradient(180deg,#081022ec,#081a30f5);align-items:center;backdrop-filter:none}
+.overlay.result-screen .panel{background:#0c1b30;border:1px solid #476b86;border-radius:12px;padding:12px;max-height:100%}
+.overlay.result-screen .panel p{font-size:clamp(12px,2.7vw,14px)}
+.overlay.result-screen .btn{width:100%}
 </style>
 </head>
 <body>
 <div class="wrap">
- <div class="head"><h1>✦ STAR DEFENDER</h1><small>HTML5 DEMO / v1.4</small></div>
+ <div class="head"><h1>✦ STAR DEFENDER</h1><small>HTML5 DEMO / v1.5</small></div>
  <div class="shell" id="shell">
   <canvas id="game" width="480" height="640" aria-label="縦スクロールシューティングのゲーム画面"></canvas>
   <div class="hud"><div>SCORE <span id="score">000000</span></div><div>HP <span id="hp">♥♥♥</span></div><div>TIME <span id="level">150</span></div><div>SP <span id="special" class="special-count">0/2</span></div></div><div class="boss-note" id="bossNote">WARNING — BOSS<div class="boss-bar"><div class="boss-fill" id="bossFill"></div></div></div>
-  <div class="pickup-note" id="pickupNote" aria-live="polite"></div><div class="overlay" id="overlay"><div class="panel"><h2 id="overlayTitle">STAR DEFENDER</h2><p id="overlayText"><b>作戦名：LAST SIGNAL</b><br>辺境防衛線が敵軍の侵攻を受けた。<br>あなたは迎撃機のパイロット。<br>敵を食い止め、150秒後の味方艦隊撤退を援護せよ。<br><br><strong>矢印キー / WASD</strong> で移動<br><strong>SPACE</strong> で射撃（押しっぱなしOK）<br>スマホでは画面をドラッグして移動・自動射撃<br><strong>X / 特殊攻撃</strong> で全画面攻撃<br>1500点ごとに1回獲得（最大2回）<br>35秒後からボスが出現！<br>作戦が終わると戦果報告と次回強化が得られます。</p><div class="rank-entry" id="rankEntry" hidden><label for="playerName">ランキング登録</label><input id="playerName" maxlength="12" value="PLAYER" autocomplete="nickname" aria-label="ランキング登録名"><button id="saveRank" type="button">登録</button></div><div class="leaderboard"><h3>🏆 TOP 5 RANKING</h3><ol id="rankList"></ol><div class="empty" id="rankEmpty">まだ記録はありません</div></div><p class="rank-note" id="rankNote">※記録と改修はこの端末・ブラウザに保存されます</p><button class="btn" id="start">ゲーム開始</button></div></div>
+  <div class="pickup-note" id="pickupNote" aria-live="polite"></div><div class="overlay" id="overlay"><div class="panel"><h2 id="overlayTitle">STAR DEFENDER</h2><p id="overlayText"><b>操作方法</b><br><strong>PC：</strong>矢印キー / WASD で移動、SPACEで射撃、Xで特殊攻撃<br><strong>iPhone：</strong>画面ドラッグで移動・自動射撃、⚡で特殊攻撃<br><br><strong>目標：</strong>150秒間、味方の撤退を援護。敵を撃破し戦術データを回収！<br>特殊攻撃：1,500点ごとに1回、最大2回<br><strong>戦術データを1出撃で8個回収すると特殊エンディング</strong></p><div class="rank-entry" id="rankEntry" hidden><label for="playerName">ランキング登録</label><input id="playerName" maxlength="12" value="PLAYER" autocomplete="nickname" aria-label="ランキング登録名"><button id="saveRank" type="button">登録</button></div><div class="leaderboard"><h3>🏆 TOP 5 RANKING</h3><ol id="rankList"></ol><div class="empty" id="rankEmpty">まだ記録はありません</div></div><p class="rank-note" id="rankNote">※記録と改修はこの端末・ブラウザに保存されます</p><button class="btn" id="start">作戦を開始</button></div></div>
  </div>
  <div class="mobile-controls"><button class="control" id="pause">一時停止</button><button class="control" id="specialButton" style="background:#63435e;border-color:#e49cbe">⚡ 特殊攻撃 (0/2)</button><button class="control" id="restart">再スタート</button></div>
  <div class="footer">PC: <kbd>←↑↓→</kbd> / <kbd>WASD</kbd> 移動 ・ <kbd>SPACE</kbd> 射撃 ・ <kbd>X</kbd> 特殊攻撃 ・ <kbd>P</kbd> 一時停止<br>画面タッチ / ドラッグ操作にも対応</div>
@@ -23,7 +39,7 @@
 <script>
 (()=>{
 'use strict';
-const VERSION='1.4',W=480,H=640,canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
+const VERSION='1.5',W=480,H=640,canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
 const ui={score:document.getElementById('score'),hp:document.getElementById('hp'),level:document.getElementById('level'),overlay:document.getElementById('overlay'),title:document.getElementById('overlayTitle'),text:document.getElementById('overlayText'),start:document.getElementById('start'),rankEntry:document.getElementById('rankEntry'),playerName:document.getElementById('playerName'),saveRank:document.getElementById('saveRank'),rankList:document.getElementById('rankList'),rankEmpty:document.getElementById('rankEmpty'),rankNote:document.getElementById('rankNote'),special:document.getElementById('special'),specialButton:document.getElementById('specialButton'),bossNote:document.getElementById('bossNote'),bossFill:document.getElementById('bossFill')};
 const pickupNote=document.getElementById('pickupNote');const keys=new Set();let pickups=[],pickupCount=0,pickupNoteTimer=0;let state='title',player,shots=[],enemies=[],enemyShots=[],particles=[],stars=[],score=0,elapsed=0,spawnTimer=0,shotTimer=0,flash=0,lastTime=0,pointerActive=false,pointerX=W/2,pointerY=H-90,boss=null,nextBossAt=35,bossIndex=0,specialCharges=0,nextSpecialScore=1500,specialEffect=0;
 // localStorage は端末・ブラウザ単位の保存。別の人と共有するランキングではありません。
@@ -33,7 +49,9 @@ function loadCareer(){try{const x=JSON.parse(localStorage.getItem(CAREER_KEY)||'
 let career=loadCareer(),bossKills=0,missionEnded=false,missionResult='';
 function persistCareer(){try{localStorage.setItem(CAREER_KEY,JSON.stringify(career))}catch{}}
 function bonusMultiplier(){return 1+career.medals*.10}
-function introText(){return `<span class="dialogue-tag">司令部通信 / 01</span><br><b>作戦名：LAST SIGNAL</b><br>惑星アルタイル防衛線、崩壊寸前。<br>あなたは迎撃機〈SD-01〉のパイロット。<br>150秒間、敵の進撃を引きつけ、味方艦隊に撤退時間を稼げ。<br><br><strong>生還は絶対条件ではない。記録した戦果が次の作戦を変える。</strong><br>35秒後に敵旗艦が接近。<br>敵機の残骸から戦術データが落ちることがある。接近して回収すれば戦果に加算される。<br>現在の出撃記録：${career.sorties}回／改修段階：${career.medals}/3<br>スコア倍率：×${bonusMultiplier().toFixed(1)}<br><br>PC：移動 WASD・矢印／射撃 SPACE／特殊 X<br>スマホ：ドラッグで移動・自動射撃／特殊ボタン`}
+function introText(){return `<span class="dialogue-tag">艦隊司令部 / 緊急通信</span><br><b>OPERATION LAST SIGNAL</b><br>惑星アルタイル。防衛線は敵軍の侵攻によって崩壊寸前となった。<br><br>「こちら艦隊司令部。迎撃機SD-01、応答せよ。」<br>「味方艦隊の退避完了まで、残り150秒。敵の追撃を食い止めてほしい。」<br><br>さらに敵機の残骸には、敵の進路情報が記録された戦術データが残されている。<br><strong>8個の戦術データが揃えば、敵中枢への反撃作戦を立案できる。</strong><br><br>「帰還できなくても、君の戦果は必ず次へつなぐ。」<br><span style="color:#91abc7">出撃回数：${career.sorties}　/　改修：${career.medals}/3　/　得点倍率：×${bonusMultiplier().toFixed(1)}</span>`}
+function titleText(){return `<b>操作方法</b><br><strong>PC：</strong>矢印キー / WASD 移動、SPACE 射撃、X 特殊攻撃<br><strong>iPhone：</strong>ドラッグで移動・自動射撃、⚡で特殊攻撃<br><br><strong>任務：</strong>150秒間、味方艦隊の撤退を援護<br>敵を倒して戦術データを回収しよう。<br>特殊攻撃：1,500点ごとに1回、最大2回<br><strong>データ8個以上で特殊エンディング</strong><br>周回改修：${career.medals}/3　出撃記録：${career.sorties}回`}`
+function showTitle(){state='title';ui.rankEntry.hidden=true;showOverlay('STAR DEFENDER',titleText(),'作戦を開始')}`
 
 let rankings=loadRankings();
 function loadRankings(){
@@ -49,7 +67,7 @@ function renderRankings(){
   ui.rankList.replaceChildren();
   rankings.forEach(item=>{
     const li=document.createElement('li');
-    li.append(document.createTextNode(item.name));
+    li.append(document.createTextNode(item.name+(Number.isInteger(item.data)&&item.data>=0?' [DATA '+item.data+']':'')));
     const points=document.createElement('span');points.textContent=item.score.toLocaleString();
     li.append(points);ui.rankList.append(li);
   });
@@ -64,14 +82,15 @@ function finishGame(success=false){
  ui.rankNote.textContent=eligible?'TOP 5入り！名前を登録してください（このブラウザに保存）':'※記録と改修はこの端末・ブラウザに保存されます';
  const grade=score>=12000?'S':score>=8000?'A':score>=4500?'B':score>=2000?'C':'D';
  const messages={S:'あなたの名は、艦隊の全員に語り継がれる。',A:'卓越した迎撃戦果。次の作戦に希望が生まれた。',B:'防衛線に確かな時間をもたらした。',C:'あなたの奮戦は撤退作戦の助けになった。',D:'通信記録は残った。次のパイロットへ託そう。'};
- const ending=success?'味方艦隊の撤退を確認。あなたは最後の迎撃任務を完了した。':'機体との通信が途絶えた。しかし戦闘記録は味方へ届いた。';
- showOverlay(success?'MISSION COMPLETE':'MISSION REPORT',`<span class="dialogue-tag">艦隊通信 / AFTER ACTION REPORT</span><br><b>${missionResult}</b><br>${ending}<br><strong>評価 ${grade}：${messages[grade]}</strong><br><br>最終スコア：<strong>${score.toLocaleString()}</strong> ／ ボス撃破：${bossKills}機 ／ データ回収：${pickupCount}個<br>交戦時間：${Math.floor(elapsed)} / ${MISSION_TIME}秒<br><br>${earned?'技術班が戦闘記録を解析。次回の機体改修が進行！':'60秒生存またはボス撃破で、次回改修が進行します。'}<br>改修段階 ${career.medals}/3（連射＋${career.medals*5}%・得点＋${career.medals*10}%）<br><br>${eligible?'🏆 TOP 5に入賞！':''}`,'次の出撃へ');
+ const specialEnding=pickupCount>=8;
+ const ending=specialEnding?'【SPECIAL ENDING：反撃の座標】 回収した8件以上の戦術データから敵艦隊の侵攻経路を特定。司令部は反撃作戦を発令した。あなたが集めた情報が、戦局を変える。':success?'味方艦隊の撤退を確認。あなたは最後の迎撃任務を完了した。':'機体との通信が途絶えた。しかし戦闘記録は味方へ届いた。';
+ showOverlay(success?'MISSION COMPLETE':'MISSION REPORT',`<span class="dialogue-tag">艦隊通信 / AFTER ACTION REPORT</span><br><b>${missionResult}</b><br>${ending}<br><strong>評価 ${grade}：${messages[grade]}</strong><br><br>最終スコア：<strong>${score.toLocaleString()}</strong> ／ ボス撃破：${bossKills}機 ／ データ回収：${pickupCount}個<br>交戦時間：${Math.floor(elapsed)} / ${MISSION_TIME}秒<br><br>${earned?'技術班が戦闘記録を解析。次回の機体改修が進行！':'60秒生存またはボス撃破で、次回改修が進行します。'}<br>改修段階 ${career.medals}/3（連射＋${career.medals*5}%・得点＋${career.medals*10}%）<br><br>${eligible?'🏆 TOP 5に入賞！':''}`,'タイトルへ');
  updateHUD();
 }
 function saveRanking(){
   if(state!=='over'||ui.rankEntry.hidden||!qualifies(score))return;
   const name=ui.playerName.value.trim().slice(0,12)||'PLAYER';
-  rankings.push({name,score});rankings.sort((a,b)=>b.score-a.score);rankings=rankings.slice(0,5);
+  rankings.push({name,score,data:pickupCount});rankings.sort((a,b)=>b.score-a.score);rankings=rankings.slice(0,5);
   let saved=true;
   try{localStorage.setItem(RANK_KEY,JSON.stringify(rankings))}catch{saved=false}
   ui.rankEntry.hidden=true;
@@ -81,16 +100,17 @@ function saveRanking(){
 ui.saveRank.addEventListener('click',saveRanking);
 ui.playerName.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();e.stopPropagation();saveRanking()}});
 renderRankings();
+showTitle();
 let audioCtx=null;
 function tone(freq,duration=0.06,type='square',gain=0.025){try{audioCtx??=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.setValueAtTime(freq,audioCtx.currentTime);g.gain.setValueAtTime(gain,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+duration);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+duration)}catch{}}
 function rng(a,b){return a+Math.random()*(b-a)}
 function reset(){pickups=[];pickupCount=0;pickupNoteTimer=0;pickupNote.textContent="";missionEnded=false;bossKills=0;ui.rankEntry.hidden=true;ui.rankNote.textContent='※記録と改修はこの端末・ブラウザに保存されます';renderRankings();player={x:W/2,y:H-75,r:16,hp:3,invuln:0};shots=[];enemies=[];enemyShots=[];particles=[];score=0;elapsed=0;spawnTimer=.6;shotTimer=0;flash=0;boss=null;nextBossAt=35;bossIndex=0;specialCharges=0;nextSpecialScore=1500;specialEffect=0;ui.bossNote.classList.remove('visible');pointerActive=false;keys.clear();ui.overlay.classList.add('hidden');state='playing';updateHUD();lastTime=performance.now()}
 function updateHUD(){ui.score.textContent=String(score).padStart(6,'0');ui.hp.textContent='♥'.repeat(player.hp)+'♡'.repeat(3-player.hp);ui.level.textContent=String(Math.max(0,Math.ceil(MISSION_TIME-elapsed)));ui.special.textContent=`${specialCharges}/2`;ui.specialButton.textContent=`⚡ 特殊攻撃 (${specialCharges}/2)`;ui.bossNote.classList.toggle('visible',Boolean(boss));if(boss)ui.bossFill.style.width=`${Math.max(0,boss.hp/boss.maxHp*100)}%`}
-function showOverlay(title,message,button){ui.overlay.classList.toggle('cinematic',state==='briefing'||state==='over');renderRankings();ui.title.textContent=title;ui.text.innerHTML=message;ui.start.textContent=button;ui.overlay.classList.remove('hidden')}
+function showOverlay(title,message,button){ui.overlay.classList.remove('cinematic','title-screen','drama-screen','result-screen');ui.overlay.classList.add(state==='briefing'?'drama-screen':state==='over'?'result-screen':'title-screen');renderRankings();ui.title.textContent=title;ui.text.innerHTML=message;ui.start.textContent=button;ui.overlay.classList.remove('hidden')}
 function pauseToggle(){if(state==='playing'){ui.rankEntry.hidden=true;state='paused';showOverlay('PAUSED','一時停止中です。<br>準備ができたら再開してください。','再開')}else if(state==='paused'){state='playing';ui.overlay.classList.add('hidden');lastTime=performance.now()}}
-function startClick(){if(state==='paused'){pauseToggle();return}if(state==='briefing'){reset();return}state='briefing';ui.rankEntry.hidden=true;showOverlay('作戦ブリーフィング',introText(),'出撃する')}
+function startClick(){if(state==='paused'){pauseToggle();return}if(state==='briefing'){reset();return}if(state==='over'){showTitle();return}state='briefing';ui.rankEntry.hidden=true;showOverlay('作戦ブリーフィング',introText(),'出撃する')}
 ui.start.addEventListener('click',startClick);
-document.getElementById('specialButton').addEventListener('click',useSpecial);document.getElementById('pause').addEventListener('click',pauseToggle);document.getElementById('restart').addEventListener('click',reset);
+document.getElementById('specialButton').addEventListener('click',useSpecial);document.getElementById('pause').addEventListener('click',pauseToggle);document.getElementById('restart').addEventListener('click',()=>{if(state==='playing'||state==='paused')showTitle();else showTitle()});
 window.addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(['arrowup','arrowdown','arrowleft','arrowright',' ','p','enter','x'].includes(k))e.preventDefault();if(e.target===ui.playerName)return;if(k==='p'&&!e.repeat)pauseToggle();else if(k==='x'&&!e.repeat)useSpecial();else if(k==='enter'&&state!=='playing')startClick();keys.add(k)});window.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));window.addEventListener('blur',()=>{keys.clear();pointerActive=false;if(state==='playing')pauseToggle()});
 function pointerPos(e){const r=canvas.getBoundingClientRect();pointerX=(e.clientX-r.left)*W/r.width;pointerY=(e.clientY-r.top)*H/r.height}
 canvas.addEventListener('pointerdown',e=>{if(state!=='playing')return;e.preventDefault();pointerActive=true;pointerPos(e);try{canvas.setPointerCapture(e.pointerId)}catch{}});
