@@ -3,9 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>STAR DEFENDER — 縦スクロールシューティング</title>
+<title>STAR DEFENDER v1.4 — LAST SIGNAL</title>
 <style>
 :root{color-scheme:dark;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#080d1c;color:#e8efff}body{display:flex;justify-content:center;align-items:center;padding:14px;overscroll-behavior:none}.wrap{width:min(100%,640px);display:grid;gap:10px;justify-items:center}.head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px}.head h1{font-size:1rem;letter-spacing:.18em;margin:0}.head small{font-size:.75rem;color:#a9b7d2}.shell{width:min(100%,480px);position:relative;border:1px solid #314463;border-radius:14px;overflow:hidden;box-shadow:0 18px 70px #0008;background:#060c1a;touch-action:none}canvas{width:100%;height:auto;aspect-ratio:3 / 4;display:block;touch-action:none}.hud{position:absolute;top:12px;left:14px;right:14px;display:flex;justify-content:space-between;gap:5px;pointer-events:none;font-size:14px;font-weight:750;text-shadow:0 2px 8px #000}.hud span{color:#6ff7e4}.hud .special-count{color:#ffd57b}.boss-note{position:absolute;top:47px;left:10%;width:80%;pointer-events:none;display:none;text-align:center;font-size:12px;font-weight:800;color:#ffbdca;text-shadow:0 2px 6px #000}.boss-note.visible{display:block}.boss-bar{margin-top:5px;height:9px;border:1px solid #ffb2bb;border-radius:8px;background:#3f1829;overflow:hidden}.boss-fill{height:100%;width:100%;background:linear-gradient(90deg,#ff6486,#ffc16b)}.overlay{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;background:#060e20ed;backdrop-filter:blur(4px);padding:12px;text-align:center;overflow-y:auto}.overlay.hidden{display:none}.panel{max-width:390px;width:100%;max-height:100%;overflow-y:auto;padding:5px 2px}.leaderboard{margin:7px auto 7px;text-align:left;max-width:300px;background:#111d35;border:1px solid #365071;border-radius:12px;padding:10px 14px}.leaderboard h3{font-size:.9rem;color:#9fe9e5;margin:0 0 7px;letter-spacing:.08em}.leaderboard ol{margin:0;padding-left:28px;font-variant-numeric:tabular-nums}.leaderboard li{padding:1px 0;color:#cfddf4;font-size:.86rem}.leaderboard li:first-child{color:#ffe09e}.leaderboard li span{float:right;margin-left:14px;color:#7cf5e8}.leaderboard .empty{font-size:.8rem;color:#a9b7d2}.rank-entry{margin:12px auto;display:flex;gap:7px;max-width:300px;align-items:center;flex-wrap:wrap;justify-content:center}.rank-entry[hidden]{display:none}.rank-entry label{font-size:.8rem;color:#d2e3fa}.rank-entry input{min-width:0;width:125px;border-radius:8px;background:#071325;border:1px solid #7193ad;color:white;padding:10px;font-size:16px}.rank-entry button{border:0;border-radius:8px;background:#f7d48d;color:#152033;padding:10px;font-weight:800;cursor:pointer}.rank-note{font-size:.72rem;color:#a8bbd6;margin:6px 0 10px}.panel h2{font-size:clamp(1.5rem,5vw,2.25rem);margin:0 0 12px;letter-spacing:.12em}.panel p{line-height:1.45;color:#b8c8e4;font-size:clamp(11px,2.5vw,14px);margin:8px 0}.panel strong{color:#65f9eb}.btn{background:#56e2d2;border:0;border-radius:11px;color:#001d2a;padding:12px 24px;font:700 16px inherit;cursor:pointer;font-weight:800;min-height:44px}.btn:hover{background:#9dfff1}.footer{font-size:.82rem;line-height:1.6;color:#aebbd5;text-align:center}.footer kbd{border:1px solid #56617f;border-radius:4px;padding:2px 5px;color:#ecf2ff}.mobile-controls{display:none;width:min(100%,480px);justify-content:space-between;gap:12px;align-items:center}.control{background:#233555;border:1px solid #4a658b;border-radius:14px;color:white;padding:12px 14px;min-height:52px;font-weight:700}.control:active{background:#3a5a7c}.hint{max-width:480px;width:100%;text-align:center;color:#90a3c3;font-size:12px}@media (pointer:coarse){.mobile-controls{display:flex}.footer{font-size:.75rem}}
+.overlay.cinematic{background:linear-gradient(180deg,#040a18aa 0%,#050a18aa 33%,#050a18ed 100%);align-items:flex-end;backdrop-filter:none;animation:fadeIn .35s ease-out}.overlay.cinematic .panel{max-width:100%;background:#09182bed;border:1px solid #55e9d1aa;border-left:4px solid #68fbe7;border-radius:12px;padding:15px 16px;box-shadow:0 -10px 30px #0008;text-align:left;max-height:88%}.overlay.cinematic .panel h2{font-size:1.12rem;color:#88fff0;letter-spacing:.11em;margin-bottom:10px}.overlay.cinematic .panel p{font-size:clamp(12px,3vw,15px);line-height:1.7;color:#e4f3ff}.overlay.cinematic .btn{width:100%;margin-top:8px}.overlay.cinematic .leaderboard{max-width:none;max-height:145px;overflow:auto}.overlay.cinematic .rank-entry{max-width:none}.overlay.cinematic .rank-note{text-align:center}.dialogue-tag{display:inline-block;border:1px solid #67efde;border-radius:5px;padding:2px 7px;margin-bottom:7px;color:#7cfbe6;font-weight:bold;font-size:.73rem;letter-spacing:.1em}.overlay.cinematic .panel p strong{color:#ffe18f}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.pickup-note{position:absolute;right:12px;top:75px;color:#ffdf86;font-weight:900;font-size:13px;text-shadow:0 1px 6px #000;pointer-events:none}
 </style>
 </head>
 <body>
@@ -14,7 +15,7 @@
  <div class="shell" id="shell">
   <canvas id="game" width="480" height="640" aria-label="縦スクロールシューティングのゲーム画面"></canvas>
   <div class="hud"><div>SCORE <span id="score">000000</span></div><div>HP <span id="hp">♥♥♥</span></div><div>TIME <span id="level">150</span></div><div>SP <span id="special" class="special-count">0/2</span></div></div><div class="boss-note" id="bossNote">WARNING — BOSS<div class="boss-bar"><div class="boss-fill" id="bossFill"></div></div></div>
-  <div class="overlay" id="overlay"><div class="panel"><h2 id="overlayTitle">STAR DEFENDER</h2><p id="overlayText"><b>作戦名：LAST SIGNAL</b><br>辺境防衛線が敵軍の侵攻を受けた。<br>あなたは迎撃機のパイロット。<br>敵を食い止め、150秒後の味方艦隊撤退を援護せよ。<br><br><strong>矢印キー / WASD</strong> で移動<br><strong>SPACE</strong> で射撃（押しっぱなしOK）<br>スマホでは画面をドラッグして移動・自動射撃<br><strong>X / 特殊攻撃</strong> で全画面攻撃<br>1500点ごとに1回獲得（最大2回）<br>35秒後からボスが出現！<br>作戦が終わると戦果報告と次回強化が得られます。</p><div class="rank-entry" id="rankEntry" hidden><label for="playerName">ランキング登録</label><input id="playerName" maxlength="12" value="PLAYER" autocomplete="nickname" aria-label="ランキング登録名"><button id="saveRank" type="button">登録</button></div><div class="leaderboard"><h3>🏆 TOP 5 RANKING</h3><ol id="rankList"></ol><div class="empty" id="rankEmpty">まだ記録はありません</div></div><p class="rank-note" id="rankNote">※記録と改修はこの端末・ブラウザに保存されます</p><button class="btn" id="start">ゲーム開始</button></div></div>
+  <div class="pickup-note" id="pickupNote" aria-live="polite"></div><div class="overlay" id="overlay"><div class="panel"><h2 id="overlayTitle">STAR DEFENDER</h2><p id="overlayText"><b>作戦名：LAST SIGNAL</b><br>辺境防衛線が敵軍の侵攻を受けた。<br>あなたは迎撃機のパイロット。<br>敵を食い止め、150秒後の味方艦隊撤退を援護せよ。<br><br><strong>矢印キー / WASD</strong> で移動<br><strong>SPACE</strong> で射撃（押しっぱなしOK）<br>スマホでは画面をドラッグして移動・自動射撃<br><strong>X / 特殊攻撃</strong> で全画面攻撃<br>1500点ごとに1回獲得（最大2回）<br>35秒後からボスが出現！<br>作戦が終わると戦果報告と次回強化が得られます。</p><div class="rank-entry" id="rankEntry" hidden><label for="playerName">ランキング登録</label><input id="playerName" maxlength="12" value="PLAYER" autocomplete="nickname" aria-label="ランキング登録名"><button id="saveRank" type="button">登録</button></div><div class="leaderboard"><h3>🏆 TOP 5 RANKING</h3><ol id="rankList"></ol><div class="empty" id="rankEmpty">まだ記録はありません</div></div><p class="rank-note" id="rankNote">※記録と改修はこの端末・ブラウザに保存されます</p><button class="btn" id="start">ゲーム開始</button></div></div>
  </div>
  <div class="mobile-controls"><button class="control" id="pause">一時停止</button><button class="control" id="specialButton" style="background:#63435e;border-color:#e49cbe">⚡ 特殊攻撃 (0/2)</button><button class="control" id="restart">再スタート</button></div>
  <div class="footer">PC: <kbd>←↑↓→</kbd> / <kbd>WASD</kbd> 移動 ・ <kbd>SPACE</kbd> 射撃 ・ <kbd>X</kbd> 特殊攻撃 ・ <kbd>P</kbd> 一時停止<br>画面タッチ / ドラッグ操作にも対応</div>
@@ -22,9 +23,9 @@
 <script>
 (()=>{
 'use strict';
-const W=480,H=640,canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
+const VERSION='1.4',W=480,H=640,canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
 const ui={score:document.getElementById('score'),hp:document.getElementById('hp'),level:document.getElementById('level'),overlay:document.getElementById('overlay'),title:document.getElementById('overlayTitle'),text:document.getElementById('overlayText'),start:document.getElementById('start'),rankEntry:document.getElementById('rankEntry'),playerName:document.getElementById('playerName'),saveRank:document.getElementById('saveRank'),rankList:document.getElementById('rankList'),rankEmpty:document.getElementById('rankEmpty'),rankNote:document.getElementById('rankNote'),special:document.getElementById('special'),specialButton:document.getElementById('specialButton'),bossNote:document.getElementById('bossNote'),bossFill:document.getElementById('bossFill')};
-const keys=new Set();let state='title',player,shots=[],enemies=[],enemyShots=[],particles=[],stars=[],score=0,elapsed=0,spawnTimer=0,shotTimer=0,flash=0,lastTime=0,pointerActive=false,pointerX=W/2,pointerY=H-90,boss=null,nextBossAt=35,bossIndex=0,specialCharges=0,nextSpecialScore=1500,specialEffect=0;
+const pickupNote=document.getElementById('pickupNote');const keys=new Set();let pickups=[],pickupCount=0,pickupNoteTimer=0;let state='title',player,shots=[],enemies=[],enemyShots=[],particles=[],stars=[],score=0,elapsed=0,spawnTimer=0,shotTimer=0,flash=0,lastTime=0,pointerActive=false,pointerX=W/2,pointerY=H-90,boss=null,nextBossAt=35,bossIndex=0,specialCharges=0,nextSpecialScore=1500,specialEffect=0;
 // localStorage は端末・ブラウザ単位の保存。別の人と共有するランキングではありません。
 const RANK_KEY='star-defender-ranking-v1';
 const CAREER_KEY='star-defender-career-v1',MISSION_TIME=150;
@@ -32,7 +33,7 @@ function loadCareer(){try{const x=JSON.parse(localStorage.getItem(CAREER_KEY)||'
 let career=loadCareer(),bossKills=0,missionEnded=false,missionResult='';
 function persistCareer(){try{localStorage.setItem(CAREER_KEY,JSON.stringify(career))}catch{}}
 function bonusMultiplier(){return 1+career.medals*.10}
-function introText(){return `<b>作戦名：LAST SIGNAL</b><br>惑星アルタイル防衛線、崩壊寸前。<br>あなたは迎撃機〈SD-01〉のパイロット。<br>150秒間、敵の進撃を引きつけ、味方艦隊に撤退時間を稼げ。<br><br><strong>生還は絶対条件ではない。記録した戦果が次の作戦を変える。</strong><br>35秒後に敵旗艦が接近。<br>現在の出撃記録：${career.sorties}回／改修段階：${career.medals}/3<br>スコア倍率：×${bonusMultiplier().toFixed(1)}<br><br>PC：移動 WASD・矢印／射撃 SPACE／特殊 X<br>スマホ：ドラッグで移動・自動射撃／特殊ボタン`}
+function introText(){return `<span class="dialogue-tag">司令部通信 / 01</span><br><b>作戦名：LAST SIGNAL</b><br>惑星アルタイル防衛線、崩壊寸前。<br>あなたは迎撃機〈SD-01〉のパイロット。<br>150秒間、敵の進撃を引きつけ、味方艦隊に撤退時間を稼げ。<br><br><strong>生還は絶対条件ではない。記録した戦果が次の作戦を変える。</strong><br>35秒後に敵旗艦が接近。<br>敵機の残骸から戦術データが落ちることがある。接近して回収すれば戦果に加算される。<br>現在の出撃記録：${career.sorties}回／改修段階：${career.medals}/3<br>スコア倍率：×${bonusMultiplier().toFixed(1)}<br><br>PC：移動 WASD・矢印／射撃 SPACE／特殊 X<br>スマホ：ドラッグで移動・自動射撃／特殊ボタン`}
 
 let rankings=loadRankings();
 function loadRankings(){
@@ -64,7 +65,7 @@ function finishGame(success=false){
  const grade=score>=12000?'S':score>=8000?'A':score>=4500?'B':score>=2000?'C':'D';
  const messages={S:'あなたの名は、艦隊の全員に語り継がれる。',A:'卓越した迎撃戦果。次の作戦に希望が生まれた。',B:'防衛線に確かな時間をもたらした。',C:'あなたの奮戦は撤退作戦の助けになった。',D:'通信記録は残った。次のパイロットへ託そう。'};
  const ending=success?'味方艦隊の撤退を確認。あなたは最後の迎撃任務を完了した。':'機体との通信が途絶えた。しかし戦闘記録は味方へ届いた。';
- showOverlay(success?'MISSION COMPLETE':'MISSION REPORT',`<b>${missionResult}</b><br>${ending}<br><strong>評価 ${grade}：${messages[grade]}</strong><br><br>最終スコア：<strong>${score.toLocaleString()}</strong> ／ ボス撃破：${bossKills}機<br>交戦時間：${Math.floor(elapsed)} / ${MISSION_TIME}秒<br><br>${earned?'技術班が戦闘記録を解析。次回の機体改修が進行！':'60秒生存またはボス撃破で、次回改修が進行します。'}<br>改修段階 ${career.medals}/3（連射＋${career.medals*5}%・得点＋${career.medals*10}%）<br><br>${eligible?'🏆 TOP 5に入賞！':''}`,'次の出撃へ');
+ showOverlay(success?'MISSION COMPLETE':'MISSION REPORT',`<span class="dialogue-tag">艦隊通信 / AFTER ACTION REPORT</span><br><b>${missionResult}</b><br>${ending}<br><strong>評価 ${grade}：${messages[grade]}</strong><br><br>最終スコア：<strong>${score.toLocaleString()}</strong> ／ ボス撃破：${bossKills}機 ／ データ回収：${pickupCount}個<br>交戦時間：${Math.floor(elapsed)} / ${MISSION_TIME}秒<br><br>${earned?'技術班が戦闘記録を解析。次回の機体改修が進行！':'60秒生存またはボス撃破で、次回改修が進行します。'}<br>改修段階 ${career.medals}/3（連射＋${career.medals*5}%・得点＋${career.medals*10}%）<br><br>${eligible?'🏆 TOP 5に入賞！':''}`,'次の出撃へ');
  updateHUD();
 }
 function saveRanking(){
@@ -83,9 +84,9 @@ renderRankings();
 let audioCtx=null;
 function tone(freq,duration=0.06,type='square',gain=0.025){try{audioCtx??=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.setValueAtTime(freq,audioCtx.currentTime);g.gain.setValueAtTime(gain,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+duration);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+duration)}catch{}}
 function rng(a,b){return a+Math.random()*(b-a)}
-function reset(){missionEnded=false;bossKills=0;ui.rankEntry.hidden=true;ui.rankNote.textContent='※記録と改修はこの端末・ブラウザに保存されます';renderRankings();player={x:W/2,y:H-75,r:16,hp:3,invuln:0};shots=[];enemies=[];enemyShots=[];particles=[];score=0;elapsed=0;spawnTimer=.6;shotTimer=0;flash=0;boss=null;nextBossAt=35;bossIndex=0;specialCharges=0;nextSpecialScore=1500;specialEffect=0;ui.bossNote.classList.remove('visible');pointerActive=false;keys.clear();ui.overlay.classList.add('hidden');state='playing';updateHUD();lastTime=performance.now()}
+function reset(){pickups=[];pickupCount=0;pickupNoteTimer=0;pickupNote.textContent="";missionEnded=false;bossKills=0;ui.rankEntry.hidden=true;ui.rankNote.textContent='※記録と改修はこの端末・ブラウザに保存されます';renderRankings();player={x:W/2,y:H-75,r:16,hp:3,invuln:0};shots=[];enemies=[];enemyShots=[];particles=[];score=0;elapsed=0;spawnTimer=.6;shotTimer=0;flash=0;boss=null;nextBossAt=35;bossIndex=0;specialCharges=0;nextSpecialScore=1500;specialEffect=0;ui.bossNote.classList.remove('visible');pointerActive=false;keys.clear();ui.overlay.classList.add('hidden');state='playing';updateHUD();lastTime=performance.now()}
 function updateHUD(){ui.score.textContent=String(score).padStart(6,'0');ui.hp.textContent='♥'.repeat(player.hp)+'♡'.repeat(3-player.hp);ui.level.textContent=String(Math.max(0,Math.ceil(MISSION_TIME-elapsed)));ui.special.textContent=`${specialCharges}/2`;ui.specialButton.textContent=`⚡ 特殊攻撃 (${specialCharges}/2)`;ui.bossNote.classList.toggle('visible',Boolean(boss));if(boss)ui.bossFill.style.width=`${Math.max(0,boss.hp/boss.maxHp*100)}%`}
-function showOverlay(title,message,button){renderRankings();ui.title.textContent=title;ui.text.innerHTML=message;ui.start.textContent=button;ui.overlay.classList.remove('hidden')}
+function showOverlay(title,message,button){ui.overlay.classList.toggle('cinematic',state==='briefing'||state==='over');renderRankings();ui.title.textContent=title;ui.text.innerHTML=message;ui.start.textContent=button;ui.overlay.classList.remove('hidden')}
 function pauseToggle(){if(state==='playing'){ui.rankEntry.hidden=true;state='paused';showOverlay('PAUSED','一時停止中です。<br>準備ができたら再開してください。','再開')}else if(state==='paused'){state='playing';ui.overlay.classList.add('hidden');lastTime=performance.now()}}
 function startClick(){if(state==='paused'){pauseToggle();return}if(state==='briefing'){reset();return}state='briefing';ui.rankEntry.hidden=true;showOverlay('作戦ブリーフィング',introText(),'出撃する')}
 ui.start.addEventListener('click',startClick);
@@ -96,6 +97,12 @@ canvas.addEventListener('pointerdown',e=>{if(state!=='playing')return;e.preventD
 canvas.addEventListener('pointermove',e=>{if(pointerActive){e.preventDefault();pointerPos(e)}});for(const ev of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(ev,()=>pointerActive=false);
 stars=Array.from({length:95},()=>({x:rng(0,W),y:rng(0,H),speed:rng(18,115),r:rng(.5,2),alpha:rng(.2,.85)}));
 function boom(x,y,color,count=15){for(let i=0;i<count;i++){let a=rng(0,Math.PI*2),s=rng(25,145);particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:rng(.2,.6),max:.6,r:rng(1.5,4),color})}}
+// 撃破時に確率で出現。拾うために危険な敵陣へ踏み込む判断が生まれる。
+function maybeDrop(e){
+ const rate=e.elite?.42:.25;
+ if(Math.random()>=rate)return;
+ pickups.push({x:e.x,y:e.y,r:12,age:0,life:7,value:e.elite?800:500,phase:rng(0,6.28)});
+}
 function addEnemy(){const level=1+Math.floor(elapsed/25);const elite=Math.random()<Math.min(.12+level*.045,.38);enemies.push({x:rng(30,W-30),y:-30,r:elite?23:17,hp:elite?3:1,speed:rng(60,100)+level*13,phase:rng(0,6.28),age:0,elite,shoot:rng(1.1,2.7)})}
 function collides(a,b){const dx=a.x-b.x,dy=a.y-b.y;return dx*dx+dy*dy<(a.r+b.r)*(a.r+b.r)}
 // 獲得した合計スコアが1500点増えるごとにストックを1増加。上限で余った分は持ち越さない。
@@ -131,11 +138,19 @@ function useSpecial(){
  updateHUD();
 }
 function hurt(){if(player.invuln>0)return;player.hp--;player.invuln=1.5;flash=.2;boom(player.x,player.y,'#7eefff',18);tone(110,.2,'sawtooth',.055);updateHUD();if(player.hp<=0)finishGame()}
-function update(dt){if(state!=='playing')return;elapsed+=dt;if(elapsed>=MISSION_TIME){elapsed=MISSION_TIME;finishGame(true);return;}spawnTimer-=dt;shotTimer-=dt;specialEffect=Math.max(0,specialEffect-dt);if(!boss&&elapsed>=nextBossAt)spawnBoss();flash=Math.max(0,flash-dt);player.invuln=Math.max(0,player.invuln-dt);
+function update(dt){if(state!=='playing')return;pickupNoteTimer=Math.max(0,pickupNoteTimer-dt);if(pickupNoteTimer===0)pickupNote.textContent='';elapsed+=dt;if(elapsed>=MISSION_TIME){elapsed=MISSION_TIME;finishGame(true);return;}spawnTimer-=dt;shotTimer-=dt;specialEffect=Math.max(0,specialEffect-dt);if(!boss&&elapsed>=nextBossAt)spawnBoss();flash=Math.max(0,flash-dt);player.invuln=Math.max(0,player.invuln-dt);
 let vx=(keys.has('arrowright')||keys.has('d')?1:0)-(keys.has('arrowleft')||keys.has('a')?1:0);let vy=(keys.has('arrowdown')||keys.has('s')?1:0)-(keys.has('arrowup')||keys.has('w')?1:0);
 if(pointerActive){const f=Math.min(1,dt*14);player.x+=(pointerX-player.x)*f;player.y+=(pointerY-38-player.y)*f}else{const n=Math.hypot(vx,vy)||1;player.x+=vx/n*290*dt;player.y+=vy/n*290*dt}player.x=Math.max(20,Math.min(W-20,player.x));player.y=Math.max(45,Math.min(H-23,player.y));
 if((keys.has(' ')||pointerActive)&&shotTimer<=0){shots.push({x:player.x-8,y:player.y-16,r:4,vy:-480},{x:player.x+8,y:player.y-16,r:4,vy:-480});shotTimer=.15/(1+career.medals*.05);tone(650,.025,'square',.012)}
 if(spawnTimer<=0){if(!boss||Math.random()<.4)addEnemy();spawnTimer=Math.max(.29,.92-elapsed*.006)*rng(.8,1.25)}
+for(let i=pickups.length-1;i>=0;i--){
+ const item=pickups[i];item.age+=dt;item.y+=18*dt;
+ if(collides(item,player)){
+   pickupCount++;addScore(item.value);boom(item.x,item.y,'#ffe48a',14);tone(920,.13,'sine',.035);
+   pickupNote.textContent=`DATA +${Math.round(item.value*bonusMultiplier()).toLocaleString()}`;pickupNoteTimer=1.4;
+   pickups.splice(i,1);
+ }else if(item.age>item.life||item.y>H+18)pickups.splice(i,1);
+}
 for(const s of shots)s.y+=s.vy*dt;shots=shots.filter(s=>s.y>-20);
 for(const e of enemies){e.age+=dt;e.y+=e.speed*dt;e.x+=Math.sin(e.age*2+e.phase)*25*dt;e.shoot-=dt;if(e.elite&&e.y>30&&e.y<H*.6&&e.shoot<=0){const dx=player.x-e.x,dy=player.y-e.y,l=Math.hypot(dx,dy)||1;enemyShots.push({x:e.x,y:e.y,r:6,vx:dx/l*125,vy:dy/l*125});e.shoot=2.8}}
 if(boss){
@@ -152,7 +167,7 @@ if(boss){
 }
 for(const s of enemyShots){s.x+=s.vx*dt;s.y+=s.vy*dt}enemyShots=enemyShots.filter(s=>s.y<H+20&&s.x>-20&&s.x<W+20);
 for(let i=shots.length-1;i>=0;i--){let hit=false;if(boss&&collides(shots[i],boss)){hit=true;boss.hp--;boom(shots[i].x,shots[i].y,'#ffc0a0',3);if(boss.hp<=0)destroyBoss();else updateHUD()}
-for(let j=enemies.length-1;!hit&&j>=0;j--){if(collides(shots[i],enemies[j])){hit=true;const e=enemies[j];e.hp--;boom(shots[i].x,shots[i].y,'#a8efff',3);if(e.hp<=0){addScore(e.elite?250:100);boom(e.x,e.y,e.elite?'#ffc46b':'#ff6486',18);tone(e.elite?190:260,.09,'triangle',.025);enemies.splice(j,1);updateHUD()}break}}if(hit)shots.splice(i,1)}
+for(let j=enemies.length-1;!hit&&j>=0;j--){if(collides(shots[i],enemies[j])){hit=true;const e=enemies[j];e.hp--;boom(shots[i].x,shots[i].y,'#a8efff',3);if(e.hp<=0){maybeDrop(e);addScore(e.elite?250:100);boom(e.x,e.y,e.elite?'#ffc46b':'#ff6486',18);tone(e.elite?190:260,.09,'triangle',.025);enemies.splice(j,1);updateHUD()}break}}if(hit)shots.splice(i,1)}
 for(let j=enemies.length-1;j>=0;j--){const e=enemies[j];if(collides(e,player)){enemies.splice(j,1);boom(e.x,e.y,'#ff6688');hurt()}else if(e.y>H+30){enemies.splice(j,1)}}
 for(let i=enemyShots.length-1;i>=0;i--)if(collides(enemyShots[i],player)){enemyShots.splice(i,1);hurt()}
 for(const p of particles){p.x+=p.vx*dt;p.y+=p.vy*dt;p.life-=dt}particles=particles.filter(p=>p.life>0);
@@ -163,6 +178,9 @@ function draw(dt){ctx.fillStyle='#071024';ctx.fillRect(0,0,W,H);const bg=ctx.cre
 ctx.strokeStyle='#1a3654';ctx.lineWidth=1;const scroll=(elapsed*20)%80;for(let y=scroll-80;y<H;y+=80){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
 for(const s of shots){ctx.fillStyle='#89fff6';ctx.shadowColor='#50faff';ctx.shadowBlur=14;ctx.fillRect(s.x-3,s.y-10,6,18)}ctx.shadowBlur=0;
 for(const e of enemies)drawEnemy(e);
+for(const item of pickups){
+ ctx.save();const a=item.life-item.age;ctx.globalAlpha=Math.min(1,a*2);ctx.translate(item.x,item.y);ctx.rotate(elapsed*1.5+item.phase);ctx.shadowColor='#ffdc75';ctx.shadowBlur=19;ctx.fillStyle='#ffd66d';ctx.beginPath();ctx.moveTo(0,-12);ctx.lineTo(12,0);ctx.lineTo(0,12);ctx.lineTo(-12,0);ctx.closePath();ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle='#fff5cf';ctx.lineWidth=2;ctx.stroke();ctx.restore();
+}
 if(boss){
  ctx.save();ctx.translate(boss.x,boss.y);ctx.shadowColor='#ff587e';ctx.shadowBlur=26;
  ctx.fillStyle='#a52b54';ctx.beginPath();ctx.moveTo(0,55);ctx.lineTo(63,-26);ctx.lineTo(27,-18);ctx.lineTo(0,-48);ctx.lineTo(-27,-18);ctx.lineTo(-63,-26);ctx.closePath();ctx.fill();
