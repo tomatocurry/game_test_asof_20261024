@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>STAR DEFENDER — 縦スクロールシューティング</title>
 <style>
-:root{color-scheme:dark;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#080d1c;color:#e8efff}body{display:flex;justify-content:center;align-items:center;padding:14px;overscroll-behavior:none}.wrap{width:min(100%,640px);display:grid;gap:10px;justify-items:center}.head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px}.head h1{font-size:1rem;letter-spacing:.18em;margin:0}.head small{font-size:.75rem;color:#a9b7d2}.shell{width:min(100%,480px);position:relative;border:1px solid #314463;border-radius:14px;overflow:hidden;box-shadow:0 18px 70px #0008;background:#060c1a;touch-action:none}canvas{width:100%;height:auto;aspect-ratio:3 / 4;display:block;touch-action:none}.hud{position:absolute;top:12px;left:14px;right:14px;display:flex;justify-content:space-between;gap:5px;pointer-events:none;font-size:14px;font-weight:750;text-shadow:0 2px 8px #000}.hud span{color:#6ff7e4}.overlay{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;background:#060e20d9;backdrop-filter:blur(4px);padding:22px;text-align:center}.overlay.hidden{display:none}.panel{max-width:360px}.panel h2{font-size:clamp(1.5rem,5vw,2.25rem);margin:0 0 12px;letter-spacing:.12em}.panel p{line-height:1.65;color:#b8c8e4}.panel strong{color:#65f9eb}.btn{background:#56e2d2;border:0;border-radius:11px;color:#001d2a;padding:12px 24px;font:700 16px inherit;cursor:pointer;font-weight:800;min-height:44px}.btn:hover{background:#9dfff1}.footer{font-size:.82rem;line-height:1.6;color:#aebbd5;text-align:center}.footer kbd{border:1px solid #56617f;border-radius:4px;padding:2px 5px;color:#ecf2ff}.mobile-controls{display:none;width:min(100%,480px);justify-content:space-between;gap:12px;align-items:center}.control{background:#233555;border:1px solid #4a658b;border-radius:14px;color:white;padding:12px 14px;min-height:52px;font-weight:700}.control:active{background:#3a5a7c}.hint{max-width:480px;width:100%;text-align:center;color:#90a3c3;font-size:12px}@media (pointer:coarse){.mobile-controls{display:flex}.footer{font-size:.75rem}}
+:root{color-scheme:dark;font-family:system-ui,-apple-system,'Segoe UI',sans-serif}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#080d1c;color:#e8efff}body{display:flex;justify-content:center;align-items:center;padding:14px;overscroll-behavior:none}.wrap{width:min(100%,640px);display:grid;gap:10px;justify-items:center}.head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px}.head h1{font-size:1rem;letter-spacing:.18em;margin:0}.head small{font-size:.75rem;color:#a9b7d2}.shell{width:min(100%,480px);position:relative;border:1px solid #314463;border-radius:14px;overflow:hidden;box-shadow:0 18px 70px #0008;background:#060c1a;touch-action:none}canvas{width:100%;height:auto;aspect-ratio:3 / 4;display:block;touch-action:none}.hud{position:absolute;top:12px;left:14px;right:14px;display:flex;justify-content:space-between;gap:5px;pointer-events:none;font-size:14px;font-weight:750;text-shadow:0 2px 8px #000}.hud span{color:#6ff7e4}.overlay{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;background:#060e20d9;backdrop-filter:blur(4px);padding:22px;text-align:center}.overlay.hidden{display:none}.panel{max-width:360px;width:100%}.leaderboard{margin:12px auto 14px;text-align:left;max-width:300px;background:#111d35;border:1px solid #365071;border-radius:12px;padding:10px 14px}.leaderboard h3{font-size:.9rem;color:#9fe9e5;margin:0 0 7px;letter-spacing:.08em}.leaderboard ol{margin:0;padding-left:28px;font-variant-numeric:tabular-nums}.leaderboard li{padding:3px 0;color:#cfddf4;font-size:.86rem}.leaderboard li:first-child{color:#ffe09e}.leaderboard li span{float:right;margin-left:14px;color:#7cf5e8}.leaderboard .empty{font-size:.8rem;color:#a9b7d2}.rank-entry{margin:12px auto;display:flex;gap:7px;max-width:300px;align-items:center;flex-wrap:wrap;justify-content:center}.rank-entry[hidden]{display:none}.rank-entry label{font-size:.8rem;color:#d2e3fa}.rank-entry input{min-width:0;width:125px;border-radius:8px;background:#071325;border:1px solid #7193ad;color:white;padding:10px;font-size:16px}.rank-entry button{border:0;border-radius:8px;background:#f7d48d;color:#152033;padding:10px;font-weight:800;cursor:pointer}.rank-note{font-size:.72rem;color:#a8bbd6;margin:6px 0 10px}.panel h2{font-size:clamp(1.5rem,5vw,2.25rem);margin:0 0 12px;letter-spacing:.12em}.panel p{line-height:1.65;color:#b8c8e4}.panel strong{color:#65f9eb}.btn{background:#56e2d2;border:0;border-radius:11px;color:#001d2a;padding:12px 24px;font:700 16px inherit;cursor:pointer;font-weight:800;min-height:44px}.btn:hover{background:#9dfff1}.footer{font-size:.82rem;line-height:1.6;color:#aebbd5;text-align:center}.footer kbd{border:1px solid #56617f;border-radius:4px;padding:2px 5px;color:#ecf2ff}.mobile-controls{display:none;width:min(100%,480px);justify-content:space-between;gap:12px;align-items:center}.control{background:#233555;border:1px solid #4a658b;border-radius:14px;color:white;padding:12px 14px;min-height:52px;font-weight:700}.control:active{background:#3a5a7c}.hint{max-width:480px;width:100%;text-align:center;color:#90a3c3;font-size:12px}@media (pointer:coarse){.mobile-controls{display:flex}.footer{font-size:.75rem}}
 </style>
 </head>
 <body>
 <div class="wrap">
- <div class="head"><h1>✦ STAR DEFENDER</h1><small>HTML5 DEMO / v1.0</small></div>
+ <div class="head"><h1>✦ STAR DEFENDER</h1><small>HTML5 DEMO / v1.1</small></div>
  <div class="shell" id="shell">
   <canvas id="game" width="480" height="640" aria-label="縦スクロールシューティングのゲーム画面"></canvas>
   <div class="hud"><div>SCORE <span id="score">000000</span></div><div>HP <span id="hp">♥♥♥</span></div><div>LEVEL <span id="level">1</span></div></div>
-  <div class="overlay" id="overlay"><div class="panel"><h2 id="overlayTitle">STAR DEFENDER</h2><p id="overlayText">迫りくる敵機を迎撃せよ！<br>敵を倒してスコアを稼ぎ、できるだけ長く生き残ろう。<br><br><strong>矢印キー / WASD</strong> で移動<br><strong>SPACE</strong> で射撃（押しっぱなしOK）<br>スマホでは画面をドラッグして移動・自動射撃</p><button class="btn" id="start">ゲーム開始</button></div></div>
+  <div class="overlay" id="overlay"><div class="panel"><h2 id="overlayTitle">STAR DEFENDER</h2><p id="overlayText">迫りくる敵機を迎撃せよ！<br>敵を倒してスコアを稼ぎ、できるだけ長く生き残ろう。<br><br><strong>矢印キー / WASD</strong> で移動<br><strong>SPACE</strong> で射撃（押しっぱなしOK）<br>スマホでは画面をドラッグして移動・自動射撃</p><div class="rank-entry" id="rankEntry" hidden><label for="playerName">ランキング登録</label><input id="playerName" maxlength="12" value="PLAYER" autocomplete="nickname" aria-label="ランキング登録名"><button id="saveRank" type="button">登録</button></div><div class="leaderboard"><h3>🏆 TOP 5 RANKING</h3><ol id="rankList"></ol><div class="empty" id="rankEmpty">まだ記録はありません</div></div><p class="rank-note" id="rankNote">※ランキングはこの端末・ブラウザ内に保存されます</p><button class="btn" id="start">ゲーム開始</button></div></div>
  </div>
  <div class="mobile-controls"><button class="control" id="pause">一時停止</button><span style="color:#adbfdb;font-size:12px">画面内を指で動かして射撃</span><button class="control" id="restart">再スタート</button></div>
  <div class="footer">PC: <kbd>←↑↓→</kbd> / <kbd>WASD</kbd> 移動 ・ <kbd>SPACE</kbd> 射撃 ・ <kbd>P</kbd> 一時停止<br>画面タッチ / ドラッグ操作にも対応</div>
@@ -23,19 +23,61 @@
 (()=>{
 'use strict';
 const W=480,H=640,canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
-const ui={score:document.getElementById('score'),hp:document.getElementById('hp'),level:document.getElementById('level'),overlay:document.getElementById('overlay'),title:document.getElementById('overlayTitle'),text:document.getElementById('overlayText'),start:document.getElementById('start')};
+const ui={score:document.getElementById('score'),hp:document.getElementById('hp'),level:document.getElementById('level'),overlay:document.getElementById('overlay'),title:document.getElementById('overlayTitle'),text:document.getElementById('overlayText'),start:document.getElementById('start'),rankEntry:document.getElementById('rankEntry'),playerName:document.getElementById('playerName'),saveRank:document.getElementById('saveRank'),rankList:document.getElementById('rankList'),rankEmpty:document.getElementById('rankEmpty'),rankNote:document.getElementById('rankNote')};
 const keys=new Set();let state='title',player,shots=[],enemies=[],enemyShots=[],particles=[],stars=[],score=0,elapsed=0,spawnTimer=0,shotTimer=0,flash=0,lastTime=0,pointerActive=false,pointerX=W/2,pointerY=H-90;
+// localStorage は端末・ブラウザ単位の保存。別の人と共有するランキングではありません。
+const RANK_KEY='star-defender-ranking-v1';
+let rankings=loadRankings();
+function loadRankings(){
+  try{
+    const raw=JSON.parse(localStorage.getItem(RANK_KEY)||'[]');
+    if(!Array.isArray(raw))return [];
+    return raw.filter(x=>x&&typeof x.name==='string'&&Number.isSafeInteger(x.score)&&x.score>=0)
+      .sort((a,b)=>b.score-a.score).slice(0,5);
+  }catch{return []}
+}
+function qualifies(value){return value>0&&(rankings.length<5||value>rankings[4].score)}
+function renderRankings(){
+  ui.rankList.replaceChildren();
+  rankings.forEach(item=>{
+    const li=document.createElement('li');
+    li.append(document.createTextNode(item.name));
+    const points=document.createElement('span');points.textContent=item.score.toLocaleString();
+    li.append(points);ui.rankList.append(li);
+  });
+  ui.rankEmpty.hidden=rankings.length>0;
+}
+function finishGame(){
+  state='over';
+  const eligible=qualifies(score);
+  ui.rankEntry.hidden=!eligible;
+  ui.rankNote.textContent=eligible?'TOP 5入り！名前を登録してください（このブラウザに保存）':'※ランキングはこの端末・ブラウザ内に保存されます';
+  showOverlay('GAME OVER',`最終スコア：<strong>${score.toLocaleString()}</strong><br>生存時間：${Math.floor(elapsed)} 秒<br><br>${eligible?'ランキングに入賞しました！':'もう一度挑戦しましょう。'}`,'もう一度プレイ');
+}
+function saveRanking(){
+  if(state!=='over'||ui.rankEntry.hidden||!qualifies(score))return;
+  const name=ui.playerName.value.trim().slice(0,12)||'PLAYER';
+  rankings.push({name,score});rankings.sort((a,b)=>b.score-a.score);rankings=rankings.slice(0,5);
+  let saved=true;
+  try{localStorage.setItem(RANK_KEY,JSON.stringify(rankings))}catch{saved=false}
+  ui.rankEntry.hidden=true;
+  ui.rankNote.textContent=saved?'ランキングを登録しました（このブラウザ内）':'保存できませんでした。ブラウザの保存設定をご確認ください。';
+  renderRankings();
+}
+ui.saveRank.addEventListener('click',saveRanking);
+ui.playerName.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();e.stopPropagation();saveRanking()}});
+renderRankings();
 let audioCtx=null;
 function tone(freq,duration=0.06,type='square',gain=0.025){try{audioCtx??=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.setValueAtTime(freq,audioCtx.currentTime);g.gain.setValueAtTime(gain,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+duration);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+duration)}catch{}}
 function rng(a,b){return a+Math.random()*(b-a)}
-function reset(){player={x:W/2,y:H-75,r:16,hp:3,invuln:0};shots=[];enemies=[];enemyShots=[];particles=[];score=0;elapsed=0;spawnTimer=.6;shotTimer=0;flash=0;pointerActive=false;keys.clear();ui.overlay.classList.add('hidden');state='playing';updateHUD();lastTime=performance.now()}
+function reset(){ui.rankEntry.hidden=true;ui.rankNote.textContent='※ランキングはこの端末・ブラウザ内に保存されます';renderRankings();player={x:W/2,y:H-75,r:16,hp:3,invuln:0};shots=[];enemies=[];enemyShots=[];particles=[];score=0;elapsed=0;spawnTimer=.6;shotTimer=0;flash=0;pointerActive=false;keys.clear();ui.overlay.classList.add('hidden');state='playing';updateHUD();lastTime=performance.now()}
 function updateHUD(){ui.score.textContent=String(score).padStart(6,'0');ui.hp.textContent='♥'.repeat(player.hp)+'♡'.repeat(3-player.hp);ui.level.textContent=String(1+Math.floor(elapsed/25))}
-function showOverlay(title,message,button){ui.title.textContent=title;ui.text.innerHTML=message;ui.start.textContent=button;ui.overlay.classList.remove('hidden')}
-function pauseToggle(){if(state==='playing'){state='paused';showOverlay('PAUSED','一時停止中です。<br>準備ができたら再開してください。','再開')}else if(state==='paused'){state='playing';ui.overlay.classList.add('hidden');lastTime=performance.now()}}
+function showOverlay(title,message,button){renderRankings();ui.title.textContent=title;ui.text.innerHTML=message;ui.start.textContent=button;ui.overlay.classList.remove('hidden')}
+function pauseToggle(){if(state==='playing'){ui.rankEntry.hidden=true;state='paused';showOverlay('PAUSED','一時停止中です。<br>準備ができたら再開してください。','再開')}else if(state==='paused'){state='playing';ui.overlay.classList.add('hidden');lastTime=performance.now()}}
 function startClick(){if(state==='paused')pauseToggle();else reset()}
 ui.start.addEventListener('click',startClick);
 document.getElementById('pause').addEventListener('click',pauseToggle);document.getElementById('restart').addEventListener('click',reset);
-window.addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(['arrowup','arrowdown','arrowleft','arrowright',' ','p','enter'].includes(k))e.preventDefault();if(k==='p'&&!e.repeat)pauseToggle();else if(k==='enter'&&state!=='playing')startClick();keys.add(k)});window.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));window.addEventListener('blur',()=>{keys.clear();pointerActive=false;if(state==='playing')pauseToggle()});
+window.addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(['arrowup','arrowdown','arrowleft','arrowright',' ','p','enter'].includes(k))e.preventDefault();if(e.target===ui.playerName)return;if(k==='p'&&!e.repeat)pauseToggle();else if(k==='enter'&&state!=='playing')startClick();keys.add(k)});window.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));window.addEventListener('blur',()=>{keys.clear();pointerActive=false;if(state==='playing')pauseToggle()});
 function pointerPos(e){const r=canvas.getBoundingClientRect();pointerX=(e.clientX-r.left)*W/r.width;pointerY=(e.clientY-r.top)*H/r.height}
 canvas.addEventListener('pointerdown',e=>{if(state!=='playing')return;e.preventDefault();pointerActive=true;pointerPos(e);try{canvas.setPointerCapture(e.pointerId)}catch{}});
 canvas.addEventListener('pointermove',e=>{if(pointerActive){e.preventDefault();pointerPos(e)}});for(const ev of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(ev,()=>pointerActive=false);
@@ -43,7 +85,7 @@ stars=Array.from({length:95},()=>({x:rng(0,W),y:rng(0,H),speed:rng(18,115),r:rng
 function boom(x,y,color,count=15){for(let i=0;i<count;i++){let a=rng(0,Math.PI*2),s=rng(25,145);particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:rng(.2,.6),max:.6,r:rng(1.5,4),color})}}
 function addEnemy(){const level=1+Math.floor(elapsed/25);const elite=Math.random()<Math.min(.12+level*.045,.38);enemies.push({x:rng(30,W-30),y:-30,r:elite?23:17,hp:elite?3:1,speed:rng(60,100)+level*13,phase:rng(0,6.28),age:0,elite,shoot:rng(1.1,2.7)})}
 function collides(a,b){const dx=a.x-b.x,dy=a.y-b.y;return dx*dx+dy*dy<(a.r+b.r)*(a.r+b.r)}
-function hurt(){if(player.invuln>0)return;player.hp--;player.invuln=1.5;flash=.2;boom(player.x,player.y,'#7eefff',18);tone(110,.2,'sawtooth',.055);updateHUD();if(player.hp<=0){state='over';showOverlay('GAME OVER',`最終スコア：<strong>${score.toLocaleString()}</strong><br>生存時間：${Math.floor(elapsed)} 秒<br><br>もう一度挑戦しましょう。`,'もう一度プレイ')}}
+function hurt(){if(player.invuln>0)return;player.hp--;player.invuln=1.5;flash=.2;boom(player.x,player.y,'#7eefff',18);tone(110,.2,'sawtooth',.055);updateHUD();if(player.hp<=0)finishGame()}
 function update(dt){if(state!=='playing')return;elapsed+=dt;spawnTimer-=dt;shotTimer-=dt;flash=Math.max(0,flash-dt);player.invuln=Math.max(0,player.invuln-dt);
 let vx=(keys.has('arrowright')||keys.has('d')?1:0)-(keys.has('arrowleft')||keys.has('a')?1:0);let vy=(keys.has('arrowdown')||keys.has('s')?1:0)-(keys.has('arrowup')||keys.has('w')?1:0);
 if(pointerActive){const f=Math.min(1,dt*14);player.x+=(pointerX-player.x)*f;player.y+=(pointerY-38-player.y)*f}else{const n=Math.hypot(vx,vy)||1;player.x+=vx/n*290*dt;player.y+=vy/n*290*dt}player.x=Math.max(20,Math.min(W-20,player.x));player.y=Math.max(45,Math.min(H-23,player.y));
