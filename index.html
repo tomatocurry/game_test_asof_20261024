@@ -27,7 +27,7 @@
 </head>
 <body>
 <div class="wrap">
- <div class="head"><h1>✦ STAR DEFENDER</h1><small>HTML5 DEMO / v1.5</small></div>
+ <div class="head"><h1>✦ STAR DEFENDER</h1><small>HTML5 DEMO / v1.5.1</small></div>
  <div class="shell" id="shell">
   <canvas id="game" width="480" height="640" aria-label="縦スクロールシューティングのゲーム画面"></canvas>
   <div class="hud"><div>SCORE <span id="score">000000</span></div><div>HP <span id="hp">♥♥♥</span></div><div>TIME <span id="level">150</span></div><div>SP <span id="special" class="special-count">0/2</span></div></div><div class="boss-note" id="bossNote">WARNING — BOSS<div class="boss-bar"><div class="boss-fill" id="bossFill"></div></div></div>
@@ -39,7 +39,7 @@
 <script>
 (()=>{
 'use strict';
-const VERSION='1.5',W=480,H=640,canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
+const VERSION='1.5.1',W=480,H=640,canvas=document.getElementById('game'),ctx=canvas.getContext('2d');
 const ui={score:document.getElementById('score'),hp:document.getElementById('hp'),level:document.getElementById('level'),overlay:document.getElementById('overlay'),title:document.getElementById('overlayTitle'),text:document.getElementById('overlayText'),start:document.getElementById('start'),rankEntry:document.getElementById('rankEntry'),playerName:document.getElementById('playerName'),saveRank:document.getElementById('saveRank'),rankList:document.getElementById('rankList'),rankEmpty:document.getElementById('rankEmpty'),rankNote:document.getElementById('rankNote'),special:document.getElementById('special'),specialButton:document.getElementById('specialButton'),bossNote:document.getElementById('bossNote'),bossFill:document.getElementById('bossFill')};
 const pickupNote=document.getElementById('pickupNote');const keys=new Set();let pickups=[],pickupCount=0,pickupNoteTimer=0;let state='title',player,shots=[],enemies=[],enemyShots=[],particles=[],stars=[],score=0,elapsed=0,spawnTimer=0,shotTimer=0,flash=0,lastTime=0,pointerActive=false,pointerX=W/2,pointerY=H-90,boss=null,nextBossAt=35,bossIndex=0,specialCharges=0,nextSpecialScore=1500,specialEffect=0;
 // localStorage は端末・ブラウザ単位の保存。別の人と共有するランキングではありません。
@@ -50,8 +50,8 @@ let career=loadCareer(),bossKills=0,missionEnded=false,missionResult='';
 function persistCareer(){try{localStorage.setItem(CAREER_KEY,JSON.stringify(career))}catch{}}
 function bonusMultiplier(){return 1+career.medals*.10}
 function introText(){return `<span class="dialogue-tag">艦隊司令部 / 緊急通信</span><br><b>OPERATION LAST SIGNAL</b><br>惑星アルタイル。防衛線は敵軍の侵攻によって崩壊寸前となった。<br><br>「こちら艦隊司令部。迎撃機SD-01、応答せよ。」<br>「味方艦隊の退避完了まで、残り150秒。敵の追撃を食い止めてほしい。」<br><br>さらに敵機の残骸には、敵の進路情報が記録された戦術データが残されている。<br><strong>8個の戦術データが揃えば、敵中枢への反撃作戦を立案できる。</strong><br><br>「帰還できなくても、君の戦果は必ず次へつなぐ。」<br><span style="color:#91abc7">出撃回数：${career.sorties}　/　改修：${career.medals}/3　/　得点倍率：×${bonusMultiplier().toFixed(1)}</span>`}
-function titleText(){return `<b>操作方法</b><br><strong>PC：</strong>矢印キー / WASD 移動、SPACE 射撃、X 特殊攻撃<br><strong>iPhone：</strong>ドラッグで移動・自動射撃、⚡で特殊攻撃<br><br><strong>任務：</strong>150秒間、味方艦隊の撤退を援護<br>敵を倒して戦術データを回収しよう。<br>特殊攻撃：1,500点ごとに1回、最大2回<br><strong>データ8個以上で特殊エンディング</strong><br>周回改修：${career.medals}/3　出撃記録：${career.sorties}回`}`
-function showTitle(){state='title';ui.rankEntry.hidden=true;showOverlay('STAR DEFENDER',titleText(),'作戦を開始')}`
+function titleText(){return `<b>操作方法</b><br><strong>PC：</strong>矢印キー / WASD 移動、SPACE 射撃、X 特殊攻撃<br><strong>iPhone：</strong>ドラッグで移動・自動射撃、⚡で特殊攻撃<br><br><strong>任務：</strong>150秒間、味方艦隊の撤退を援護<br>敵を倒して戦術データを回収しよう。<br>特殊攻撃：1,500点ごとに1回、最大2回<br><strong>データ8個以上で特殊エンディング</strong><br>周回改修：${career.medals}/3　出撃記録：${career.sorties}回`}
+function showTitle(){state='title';ui.rankEntry.hidden=true;showOverlay('STAR DEFENDER',titleText(),'作戦を開始')}
 
 let rankings=loadRankings();
 function loadRankings(){
